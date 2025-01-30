@@ -2,34 +2,29 @@
 
 A React-based frontend widget for the AI resume chatbot.
 
-## Deployment Instructions (Vercel)
+## Deployment Instructions (Render.com)
 
-1. Create a Vercel account at https://vercel.com
+1. Create a Render account at https://render.com
 
-2. Install Vercel CLI:
+2. Connect your GitHub repository to Render:
 
-```bash
-npm i -g vercel
-```
+   - Go to Dashboard
+   - Click "New +"
+   - Select "Static Site"
+   - Choose your repository
+   - Select the branch to deploy
 
-3. Login to Vercel:
+3. Configure the site:
 
-```bash
-vercel login
-```
+   - Name: `resume-chatbot-widget` (or your preferred name)
+   - Build Command: `npm install && npm run build`
+   - Publish Directory: `dist`
+   - Add environment variable:
+     - `VITE_API_URL`: Your backend URL (e.g. `https://resume-chatbot-api.onrender.com`)
 
-4. Configure environment variables in Vercel:
+4. Click "Create Static Site"
 
-- Go to your project settings
-- Add `VITE_API_URL` with your Railway backend URL (e.g. https://your-app.railway.app)
-
-5. Deploy to Vercel:
-
-```bash
-vercel
-```
-
-Follow the prompts to deploy your application. Once deployed, Vercel will provide you with a URL for your application.
+Your site will be available at `https://your-site-name.onrender.com`
 
 ## Environment Variables
 
@@ -37,7 +32,7 @@ Copy `.env.example` to `.env` and configure:
 
 ```
 VITE_API_URL=http://localhost:5001  # Local development
-# VITE_API_URL=https://your-app.railway.app  # Production
+# VITE_API_URL=https://your-backend.onrender.com  # Production
 ```
 
 ## Local Development

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: resume-chatbot-widget
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://resume-chat-bot.onrender.com
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
