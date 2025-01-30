@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/ChatbotWidget.css";
+import config from "../config";
 
 interface Message {
   text: string;
@@ -114,7 +115,7 @@ const ChatbotWidget: React.FC = () => {
 
   const checkApiStatus = async () => {
     try {
-      const response = await fetch("/chat", {
+      const response = await fetch(`${config.apiUrl}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +123,7 @@ const ChatbotWidget: React.FC = () => {
         body: JSON.stringify({ message: "ping" }),
       });
       setIsApiOnline(response.ok);
-    } catch (error) {
+    } catch {
       setIsApiOnline(false);
     }
   };
@@ -179,7 +180,7 @@ const ChatbotWidget: React.FC = () => {
 
     try {
       // Make API call to resume chatbot using relative path
-      const response = await fetch("/chat", {
+      const response = await fetch(`${config.apiUrl}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

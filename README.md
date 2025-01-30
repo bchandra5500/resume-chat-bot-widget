@@ -1,153 +1,72 @@
 # Resume Chatbot Widget
 
-A modern, responsive React widget that provides a sleek chat interface for interacting with an AI-powered resume assistant. Built with React, TypeScript, and Vite.
+A React-based frontend widget for the AI resume chatbot.
 
-## Features
+## Deployment Instructions (Vercel)
 
-- **Modern UI**: Sleek, responsive design with smooth animations
-- **Real-time Status**: Visual indicators for online/offline status
-- **Auto-expanding Input**: Dynamic textarea that grows with content
-- **Error Handling**: Graceful error states and offline mode
-- **Typing Indicators**: Visual feedback for AI responses
-- **Responsive Layout**: Adapts to different screen sizes
+1. Create a Vercel account at https://vercel.com
 
-## Prerequisites
-
-- Node.js 16+
-- npm or yarn
-- Resume Chatbot Backend running locally
-
-## Setup
-
-1. Clone the repository:
+2. Install Vercel CLI:
 
 ```bash
-git clone <repository-url>
-cd resume_chatbot_widget
+npm i -g vercel
 ```
 
-2. Install dependencies:
+3. Login to Vercel:
+
+```bash
+vercel login
+```
+
+4. Configure environment variables in Vercel:
+
+- Go to your project settings
+- Add `VITE_API_URL` with your Railway backend URL (e.g. https://your-app.railway.app)
+
+5. Deploy to Vercel:
+
+```bash
+vercel
+```
+
+Follow the prompts to deploy your application. Once deployed, Vercel will provide you with a URL for your application.
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and configure:
+
+```
+VITE_API_URL=http://localhost:5001  # Local development
+# VITE_API_URL=https://your-app.railway.app  # Production
+```
+
+## Local Development
+
+1. Install dependencies:
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. Configure the development environment:
-   - The widget expects the backend server to be running on `http://localhost:5001`
-   - The proxy configuration is already set up in `vite.config.ts`
-
-## Development
-
-Start the development server:
+2. Start development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-The development server will start on `http://localhost:5173` with hot module replacement enabled.
+The development server will run on http://localhost:5173
 
 ## Building for Production
 
-Build the widget:
+To create a production build:
 
 ```bash
 npm run build
-# or
-yarn build
 ```
 
-The built files will be in the `dist` directory.
+## Customization
 
-## Project Structure
+You can customize the widget appearance by modifying:
 
-```
-resume_chatbot_widget/
-├── .gitignore              # Git ignore rules
-├── index.html              # HTML entry point
-├── package.json            # Project dependencies and scripts
-├── tsconfig.json           # TypeScript configuration
-├── vite.config.ts          # Vite configuration
-├── public/                 # Static assets
-└── src/
-    ├── components/         # React components
-    │   └── ChatbotWidget.tsx  # Main widget component
-    ├── styles/             # CSS styles
-    │   └── ChatbotWidget.css  # Widget styles
-    ├── App.tsx            # Root component
-    └── main.tsx           # Application entry point
-```
-
-## Features in Detail
-
-### Real-time Status Indicator
-
-- Green dot indicates active backend connection
-- Red dot shows when backend is unavailable
-- Automatic status checks every 30 seconds
-
-### Message Input
-
-- Auto-expanding textarea
-- Enter to send, Shift+Enter for new line
-- Character limit handling
-- Disabled state when offline
-
-### Responsive Design
-
-- Adapts to container width
-- Mobile-friendly interface
-- Smooth animations and transitions
-- Custom scrollbar styling
-
-## Styling
-
-The widget uses custom CSS with:
-
-- CSS Grid and Flexbox for layout
-- CSS Variables for theming
-- CSS Animations for smooth transitions
-- Modern gradient backgrounds
-- Responsive design principles
-
-## Integration
-
-To integrate the widget into another project:
-
-1. Build the widget
-2. Copy the built files from `dist`
-3. Import and use the ChatbotWidget component:
-
-```tsx
-import { ChatbotWidget } from "resume-chatbot-widget";
-
-function App() {
-  return (
-    <div className="container">
-      <ChatbotWidget />
-    </div>
-  );
-}
-```
-
-## Development Notes
-
-- Uses Vite for fast development and optimized builds
-- TypeScript for type safety
-- Modern React practices with hooks
-- CSS modules for style encapsulation
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-[Your chosen license]
+- `src/styles/ChatbotWidget.css` - Styling
+- `src/components/ChatbotWidget.tsx` - Component logic and structure
