@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ChatbotWidget from "./components/ChatbotWidget";
 import "./App.css";
 import { ToastContainer, toast } from "react-toastify";
