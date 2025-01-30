@@ -1,67 +1,81 @@
-# Resume Chatbot Widget
+# AI Resume Chatbot (Frontend Widget)
 
-A React-based frontend widget for the AI resume chatbot.
+Live Demo: [https://resume-chatbot-widget.onrender.com](https://resume-chatbot-widget.onrender.com)
 
-## Deployment Instructions (Render.com)
+A modern React-based chat interface that connects to an AI-powered backend to provide interactive conversations about my professional experience.
 
-1. Create a Render account at https://render.com
+## Architecture
 
-2. Connect your GitHub repository to Render:
+- **Framework**: React + TypeScript
+- **Build Tool**: Vite
+- **UI Components**: Custom-built for optimal UX
+- **State Management**: React Hooks
+- **Deployment**: Render.com static site
+- **API Integration**: REST endpoints with fetch API
 
-   - Go to Dashboard
-   - Click "New +"
-   - Select "Static Site"
-   - Choose your repository
-   - Select the branch to deploy
-
-3. Configure the site:
-
-   - Name: `resume-chatbot-widget` (or your preferred name)
-   - Build Command: `npm install && npm run build`
-   - Publish Directory: `dist`
-   - Add environment variable:
-     - `VITE_API_URL`: Your backend URL (e.g. `https://resume-chatbot-api.onrender.com`)
-
-4. Click "Create Static Site"
-
-Your site will be available at `https://your-site-name.onrender.com`
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and configure:
+## Project Structure
 
 ```
-VITE_API_URL=http://localhost:5001  # Local development
-# VITE_API_URL=https://your-backend.onrender.com  # Production
+resume_chatbot_widget/
+├── src/
+│   ├── components/     # React components
+│   ├── styles/        # CSS modules
+│   ├── config.ts      # Configuration
+│   └── App.tsx        # Main application
+├── public/            # Static assets
+└── vite.config.ts     # Vite configuration
 ```
 
 ## Local Development
 
-1. Install dependencies:
+1. **Environment Setup**
 
-```bash
-npm install
-```
+   ```bash
+   # Install dependencies
+   npm install
 
-2. Start development server:
+   # Copy environment template
+   cp .env.example .env
+   ```
 
-```bash
-npm run dev
-```
+2. **Configure Environment**
 
-The development server will run on http://localhost:5173
+   ```
+   VITE_API_URL=http://localhost:5001
+   ```
 
-## Building for Production
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+   Server runs on http://localhost:5173
 
-To create a production build:
+## Technology Stack
 
-```bash
-npm run build
-```
+- **React 18**: UI framework
+- **TypeScript**: Type safety
+- **Vite**: Build tool
+- **CSS Modules**: Styling
+- **React-Toastify**: Notifications
+- **ESLint**: Code quality
 
-## Customization
+## Features
 
-You can customize the widget appearance by modifying:
+- **Real-time Chat**: Smooth, instant interactions
+- **Responsive Design**: Mobile-first approach
+- **Smart Notifications**: User-friendly alerts
+- **Error Handling**: Graceful fallbacks
+- **Loading States**: Optimistic UI updates
+- **Accessibility**: ARIA-compliant markup
 
-- `src/styles/ChatbotWidget.css` - Styling
-- `src/components/ChatbotWidget.tsx` - Component logic and structure
+## Component Design
+
+The widget is built with modular components:
+
+- **ChatbotWidget**: Main container
+- **MessageList**: Chat history display
+- **InputForm**: User message input
+- **AIAvatar**: Bot identification
+- **StatusIndicator**: Connection status
+
+This frontend connects to a Flask/LangChain backend for AI-powered conversations.
