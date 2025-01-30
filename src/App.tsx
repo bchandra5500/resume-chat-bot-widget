@@ -1,4 +1,3 @@
-import React from "react";
 import ChatbotWidget from "./components/ChatbotWidget";
 import "./App.css";
 
