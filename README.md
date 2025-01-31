@@ -1,6 +1,6 @@
 # AI Resume Chatbot (Frontend Widget)
 
-Live Demo: [https://resume-chatbot-widget.onrender.com](https://resume-chatbot-widget.onrender.com)
+Live Demo: [https://bharat-resume-chat-bot-widget.onrender.com](https://bharat-resume-chat-bot-widget.onrender.com)
 
 A modern React-based chat interface that connects to an AI-powered backend to provide interactive conversations about my professional experience.
 
